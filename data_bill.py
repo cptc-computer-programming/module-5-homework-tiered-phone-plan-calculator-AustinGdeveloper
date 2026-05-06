@@ -35,11 +35,13 @@ elif user_data_used <= TIER_2_DATA_LIMIT_GB:
     if PREMIUM_STATUS == "yes":
         overage_cost = float((DATA_USED - TIER_1_DATA_LIMIT_GB) * PREMIUM_USER_OVERAGE_RATE_TIER_2)
         print(f"You are {DATA_USED - TIER_1_DATA_LIMIT_GB:,.1f} GB over your data usage limit")
+        print(f"Your overage rate is: ${PREMIUM_USER_OVERAGE_RATE_TIER_2:,.2f} per GB")
         print(f"Your overage cost is: ${overage_cost:,.2f}")
         print(f"Your total bill is: ${BASE_COST + overage_cost:,.2f}")
     else:        
         overage_cost = float((DATA_USED - TIER_1_DATA_LIMIT_GB) * REGULAR_USER_OVERAGE_RATE_TIER_2)
         print(f"You are {DATA_USED - TIER_1_DATA_LIMIT_GB:,.1f} GB over your data usage limit")
+        print(f"Your overage rate is: ${REGULAR_USER_OVERAGE_RATE_TIER_2:,.2f} per GB")
         print(f"Your overage cost is: ${overage_cost:,.2f}")
         print(f"Your total bill is: ${BASE_COST + overage_cost:,.2f}")
 
@@ -48,15 +50,19 @@ elif user_data_used > TIER_2_DATA_LIMIT_GB:
     if PREMIUM_STATUS == "yes":
         overage_cost = float((TIER_2_DATA_LIMIT_GB - TIER_1_DATA_LIMIT_GB) * PREMIUM_USER_OVERAGE_RATE_TIER_2 + \
                              (DATA_USED - TIER_2_DATA_LIMIT_GB) * PREMIUM_USER_OVERAGE_RATE_TIER_3)
-        
+        print(f"You are {DATA_USED - TIER_1_DATA_LIMIT_GB:,.1f} GB over your data usage limit")
+        print(f"Your overage rate is: ${PREMIUM_USER_OVERAGE_RATE_TIER_3:,.2f} per GB")
+        print(f"Your overage cost is: ${overage_cost:,.2f}")
+        print(f"Your total bill is: ${BASE_COST + overage_cost:,.2f}")
     else:
         overage_cost = float((TIER_2_DATA_LIMIT_GB - TIER_1_DATA_LIMIT_GB) * REGULAR_USER_OVERAGE_RATE_TIER_2 + \
                              (DATA_USED - TIER_2_DATA_LIMIT_GB) * REGULAR_USER_OVERAGE_RATE_TIER_3)
-        print(f"You are {DATA_USED - TIER_2_DATA_LIMIT_GB:,.1f} GB over your data usage limit")
+        print(f"You are {DATA_USED - TIER_1_DATA_LIMIT_GB:,.1f} GB over your data usage limit")
+        print(f"Your overage rate is: ${REGULAR_USER_OVERAGE_RATE_TIER_3:,.2f} per GB")
         print(f"Your overage cost is: ${overage_cost:,.2f}")
         print(f"Your total bill is: ${BASE_COST + overage_cost:,.2f}")
 else:
-
+    print("***ERROR TRY AGAIN***")
 
 
 ## OLD CODE -- Assignment 1 code for reference
