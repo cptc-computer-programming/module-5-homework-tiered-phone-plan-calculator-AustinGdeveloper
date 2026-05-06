@@ -16,7 +16,7 @@ OVERATE_RATE = 2
 # User Inputs
 
 user_data_used = float(input("Enter data used (GB): "))
-user_base_cost = float(input("Enter base plan cost: "))
+user_base_cost = float(input("Enter base plan cost: $"))
 
 # Process
 
@@ -28,10 +28,10 @@ if user_data_used > DATA_LIMIT:
     else:
         print("Extra usage is MODERATE")
     overage_cost = overage_gb * 2
-    print(f"Your total bill is: ${user_base_cost + overage_cost:.2f}")
+    print(f"Your total bill is: ${user_base_cost + overage_cost:,.2f}")
 else:
     print("You are within the data usage limit")
-    print(f"Your total bill is: ${user_base_cost}")
+    print(f"Your total bill is: ${user_base_cost:,.2f}")
 
 #/* ABOVE PASTED FROM PREVIOUS ASSIGNMENT */
 
